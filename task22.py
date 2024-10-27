@@ -1,6 +1,6 @@
 #todo:  Задан файл dump.txt. Необходимо для заданного файла подсчитать статистику количества
 # гласных букв в тексте.
-from idlelib.iomenu import encoding
+
 
 #Формат вывода:
 # Количество букв a - 13
@@ -8,11 +8,13 @@ from idlelib.iomenu import encoding
 # Количество букв e - 11
 # .....................
 #
-vowels = "аеёиоуыэюя"
-result = {}
-with open('dump.txt', 'r',encoding="utf-8") as file:
-    for line in file:
+vowels=['а','о','э','е', 'и', 'ы', 'у', 'ё', 'ю', 'я']
+found=[]
+with open ('dump.txt', 'r', encoding='utf-8') as f:
+    for line in f:
         for char in line:
             if char in vowels:
-                result[char] = result.get(char, 0) + 1
-print(result)
+                found.append(char)
+for i in range(0,len(vowels)):
+    print('Количество букв',vowels[i],'-',found.count(vowels[i]))
+

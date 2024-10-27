@@ -14,3 +14,6 @@
 #
 #
 
+
+with open ('message.txt', 'r', encoding='utf8') as file:
+

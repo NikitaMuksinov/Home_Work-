@@ -13,7 +13,7 @@
 # Explicit is better than implicit.
 # Beautiful is better than ugly.
 
-backread=open("task20.py","r",encoding="utf-8")
+backread=open("task20.py", "r", encoding="utf-8")
 print(backread.readlines()[7:3:-1])
 backread.close()
 
