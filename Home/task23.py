@@ -13,7 +13,26 @@
 # В каждой строчке содержатся различные символы. Шифровать нужно только буквы кириллицы.
 #
 #
+text: str
 
+
+alphabet = 'абвгдежзийклмнопрстуфхцчшщъыьэюя'
 
 with open ('message.txt', 'r', encoding='utf8') as file:
+    text=file.readlines()
+result=''
+for num ,line in enumerate(text):
+    for letter in line:
+        is_lower=letter.islower()
+        letter = letter.lower()
+        if letter in alphabet:
+            jump= num + 1
+            letter = alphabet[alphabet.index(letter) - jump]
+        if is_lower==True:
+            result+=letter
+        elif is_lower==False:
+            result+=letter.upper()
+
+        #result += letter if is_lower else letter.upper()
+print(result)
 
